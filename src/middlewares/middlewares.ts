@@ -85,7 +85,9 @@ const validateKeysData = (request: Request<any, any, iPathList>, response: Respo
         
         if (!requiredKeysItem.includes(key)) {
             console.log(key);
+
             return response.status(404).json({ mensage: `Key Not Valid: ${key}` })
+
         }
         if (typeof body?.name !== "string" || typeof body?.quantity !== "string") {
             return response.status(404).json({ mensage: `Value the Keys not valid : ${body?.name || body?.quantity}` })
